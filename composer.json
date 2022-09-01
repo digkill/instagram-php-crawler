@@ -3,7 +3,8 @@
   "description": "Instagram PHP Scraper. Get account information, photos and videos without any authorization",
   "keywords": [
     "instagram",
-    "scraper"
+    "scraper",
+    "crawler"
   ],
   "type": "library",
   "homepage": "https://github.com/digkill/instagram-php-crawler",
@@ -11,7 +12,7 @@
   "authors": [
   ],
   "require": {
-    "php": ">=7.4",
+    "php": ">=8.0",
     "ext-curl": "*",
     "ext-json": "*",
     "psr/http-client": "~1.0",
@@ -28,6 +29,11 @@
   "autoload-dev": {
     "psr-4": {
       "InstagramScraper\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.x-dev"
     }
   }
 }
