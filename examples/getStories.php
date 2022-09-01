@@ -8,7 +8,7 @@ $settings=json_decode(file_get_contents('settings.json'));
 $username = $settings->username;
 $password = $settings->password;
 
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), $username, $password, new Psr16Adapter('Files'));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), $username, $password, new Psr16Adapter('Files'));
 $instagram->login();
 
 $stories = $instagram->getStories();

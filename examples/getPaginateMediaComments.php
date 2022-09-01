@@ -5,7 +5,7 @@ use Phpfastcache\Helper\Psr16Adapter;
 require __DIR__ . '/../vendor/autoload.php';
 
 $seperator = PHP_SAPI === 'cli' ? "\n" : "<br>\n";
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'user', 'passwd', new Psr16Adapter('Files'));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), 'user', 'passwd', new Psr16Adapter('Files'));
 $instagram->login();
 
 

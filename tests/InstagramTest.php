@@ -1,10 +1,10 @@
 <?php
 
-namespace InstagramScraper\Tests;
+namespace InstagramCrawler\Tests;
 
 use GuzzleHttp\Client;
-use InstagramScraper\Instagram;
-use InstagramScraper\Model\Media;
+use InstagramCrawler\Instagram;
+use InstagramCrawler\Model\Media;
 use Phpfastcache\Config\ConfigurationOption;
 use Phpfastcache\Helper\Psr16Adapter;
 use PHPUnit\Framework\TestCase;

@@ -1,6 +1,6 @@
 <?php
 
-use InstagramScraper\Instagram;
+use InstagramCrawler\Instagram;
 use Phpfastcache\Helper\Psr16Adapter;
 
 require __DIR__ . '/../vendor/autoload.php';

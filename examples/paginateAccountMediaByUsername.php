@@ -3,7 +3,7 @@ use Phpfastcache\Helper\Psr16Adapter;
 require __DIR__ . '/../vendor/autoload.php';
 
 // getPaginateMedias() works with and without authentication
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
 $instagram->login();
 
 $result = $instagram->getPaginateMedias('kevin');

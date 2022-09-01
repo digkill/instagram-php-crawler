@@ -4,10 +4,10 @@ use Phpfastcache\Helper\Psr16Adapter;
 require __DIR__ . '/../vendor/autoload.php';
 
 // If account is public you can query Instagram without auth
-$instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+$instagram = new \InstagramCrawler\Instagram(new \GuzzleHttp\Client());
 
 // If account is private and you subscribed to it, first login
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
 $instagram->login();
 
 $media = $instagram->getMediaByUrl('https://www.instagram.com/p/BHaRdodBouH');

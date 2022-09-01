@@ -8,18 +8,20 @@ This library is based on the Instagram web version. We develop it because nowada
 
 
 ## Code Example
+
 ```php
 use Phpfastcache\Helper\Psr16Adapter;
 
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
 $instagram->login();
 $account = $instagram->getAccountById(3);
 echo $account->getUsername();
 ```
 
-Some methods do not require authentication: 
+Some methods do not require authentication:
+
 ```php
-$instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+$instagram = new \InstagramCrawler\Instagram(new \GuzzleHttp\Client());
 $nonPrivateAccountMedias = $instagram->getMedias('kevin');
 echo $nonPrivateAccountMedias[0]->getLink();
 ```
@@ -29,7 +31,7 @@ If you use authentication it is recommended to cache the user session. In this c
 ```php
 use Phpfastcache\Helper\Psr16Adapter;
 
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
 $instagram->login(); // will use cached session if you want to force login $instagram->login(true)
 $instagram->saveSession();  //DO NOT forget this in order to save the session, otherwise have no sense
 $account = $instagram->getAccountById(3);
@@ -40,10 +42,10 @@ Using proxy for requests:
 
 ```php
 // https://docs.guzzlephp.org/en/stable/request-options.html#proxy
-$instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client(['proxy' => 'tcp://localhost:8125']));
+$instagram = new \InstagramCrawler\Instagram(new \GuzzleHttp\Client(['proxy' => 'tcp://localhost:8125']));
 // Request with proxy
 $account = $instagram->getAccount('kevin');
-\InstagramScraper\Instagram::setHttpClient(new \GuzzleHttp\Client());
+\InstagramCrawler\Instagram::setHttpClient(new \GuzzleHttp\Client());
 // Request without proxy
 $account = $instagram->getAccount('kevin');
 ```

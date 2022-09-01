@@ -1,11 +1,11 @@
 <?php
 require __DIR__ . '/../vendor/autoload.php';
 
-$instagram = new \InstagramScraper\Instagram(new \GuzzleHttp\Client());
+$instagram = new \InstagramCrawler\Instagram(new \GuzzleHttp\Client());
 $response = $instagram->getPaginateMedias('kevin');
 
 foreach ($response['medias'] as $media) {
-    /** @var \InstagramScraper\Model\Media $media */
+    /** @var \InstagramCrawler\Model\Media $media */
 
     echo "Media info:" . PHP_EOL;
     echo "Id: {$media->getId()}" . PHP_EOL;

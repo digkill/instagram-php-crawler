@@ -1,8 +1,8 @@
 <?php
 require __DIR__ . '/../../vendor/autoload.php';
 
-use InstagramScraper\Exception\InstagramAuthException;
-use InstagramScraper\TwoStepVerification\TwoStepVerificationInterface;
+use InstagramCrawler\Exception\InstagramAuthException;
+use InstagramCrawler\TwoStepVerification\TwoStepVerificationInterface;
 use SSilence\ImapClient\ImapClient as Imap;
 use SSilence\ImapClient\ImapClientException;
 

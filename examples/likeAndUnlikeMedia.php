@@ -1,11 +1,11 @@
 <?php
 ini_set('display_errors', 1);ini_set('display_startup_errors', 1);error_reporting(E_ALL);
 use Phpfastcache\Helper\Psr16Adapter;
-use InstagramScraper\Exception\InstagramException;
+use InstagramCrawler\Exception\InstagramException;
 
 require __DIR__ . '/../vendor/autoload.php';
 
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'user', 'passwd', new Psr16Adapter('Files'));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), 'user', 'passwd', new Psr16Adapter('Files'));
 $instagram->login();
 
 $mediaId='2474033634010898853';

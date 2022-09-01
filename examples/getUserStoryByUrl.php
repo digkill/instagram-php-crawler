@@ -19,7 +19,7 @@ function getStoryByUrl($instagram, $url)
 }
 
 
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), 'username', 'password', new Psr16Adapter('Files'));
 $instagram->login();
 
 $story = getStoryByUrl($instagram, "https://www.instagram.com/stories/hossinasaadi/2642429697467772762/");

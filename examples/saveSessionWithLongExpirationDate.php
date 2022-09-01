@@ -14,7 +14,7 @@ ini_set('display_errors', 1);ini_set('display_startup_errors', 1);error_reportin
 require __DIR__ . '/../vendor/autoload.php';
 
 use Phpfastcache\Helper\Psr16Adapter;
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'login', 'password', new Psr16Adapter('Files'));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), 'login', 'password', new Psr16Adapter('Files'));
 $instagram->login();
 
 //Save Session to reuse Insragram LoginL
@@ -33,7 +33,7 @@ foreach ($posts as $post){
 use Phpfastcache\Config\Config;
 $config = new Config();
 $config->setDefaultTtl(86400); //default ttl in seconds, should be as long as instagram login stays valid (don't know how long this is)
-$instagram = \InstagramScraper\Instagram::withCredentials(new \GuzzleHttp\Client(), 'user', 'passed', new Psr16Adapter('Files', $config));
+$instagram = \InstagramCrawler\Instagram::withCredentials(new \GuzzleHttp\Client(), 'user', 'passed', new Psr16Adapter('Files', $config));
 $instagram->login();
 $instagram->saveSession(); //Expiration date set to value as specified in config - defaultTtl
 
